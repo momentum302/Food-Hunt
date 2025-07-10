@@ -19,12 +19,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
       "subtitle": "Get the best meals from your favorite restaurants."
     },
     {
-      "image": "assets/images/food2.png",
+      "image": '/images/onboarding/food-delivery.webp',
       "title": "Fast Delivery",
       "subtitle": "Your food arrives hot and fresh, always on time."
     },
     {
-      "image": "assets/images/food3.png",
+      "image": '/images/onboarding/pay.jpg',
       "title": "Easy Payment",
       "subtitle": "Pay online or on delivery — stress free!"
     },
@@ -83,7 +83,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       Text(
                         onboardingData[index]['subtitle']!,
                         style: const TextStyle(
-                            fontSize: 16, color: Colors.white70),
+                            fontSize: 16,
+                            color: Colors.white70,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1.5),
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 40),
@@ -111,7 +114,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             );
                           } else {
                             _controller.nextPage(
-                              duration: const Duration(milliseconds: 300),
+                              duration: const Duration(seconds: 1),
                               curve: Curves.ease,
                             );
                           }
@@ -127,7 +130,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           currentPage == onboardingData.length - 1
                               ? "Get Started"
                               : "Next",
-                          style: const TextStyle(fontSize: 18),
+                          style: const TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.5),
                         ),
                       ),
                     ],
